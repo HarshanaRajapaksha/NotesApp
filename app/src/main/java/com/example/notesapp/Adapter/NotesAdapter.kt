@@ -11,6 +11,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesapp.Models.Note
 import com.example.notesapp.R
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 class NotesAdapter(private val context: Context, val listener: NotesClickListener) :
@@ -18,7 +20,6 @@ class NotesAdapter(private val context: Context, val listener: NotesClickListene
 
     private val notesList = ArrayList<Note>()
     private val fullList = ArrayList<Note>()
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder(
@@ -66,6 +67,9 @@ class NotesAdapter(private val context: Context, val listener: NotesClickListene
         notesList.clear()
         notesList.addAll(fullList)
         notifyDataSetChanged()
+
+        Collections.reverse(fullList)
+        Collections.reverse(notesList)
     }
 
     fun filterList(search: String) {

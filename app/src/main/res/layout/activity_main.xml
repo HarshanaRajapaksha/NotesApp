@@ -21,6 +21,7 @@
             android:background="@drawable/searchview_background"
             android:elevation="8dp"
             android:iconifiedByDefault="false"
+            android:focusable="false"
             android:queryHint="Search Notes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

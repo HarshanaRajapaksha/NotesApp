@@ -20,6 +20,7 @@ import com.example.notesapp.Database.NoteDatabase
 import com.example.notesapp.Models.Note
 import com.example.notesapp.Models.NotesViewModel
 import com.example.notesapp.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener,
 
@@ -63,6 +64,17 @@ class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener,
         database = NoteDatabase.getDatabase(this)
     }
 
+    override fun onResume() {
+        if (binding.searchView != null) {
+            binding.searchView.clearFocus()
+            binding.searchView.setQuery(
+                "", false
+            )
+        }
+
+        super.onResume()
+    }
+
     private fun initUI() {
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayout.VERTICAL)
@@ -86,7 +98,7 @@ class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener,
             getContent.launch(intent)
         }
 
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return false
             }
@@ -128,6 +140,8 @@ class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener,
         return false
     }
 }
+
+
 
 
 
