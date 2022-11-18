@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddNoteActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imgBackArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <ImageView
+                    android:id="@+id/imgCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="14dp"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/ic_check" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textPersonName"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <EditText
+            android:id="@+id/edtNote"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="26dp"
+            android:background="@null"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="Start Typing"
+            android:inputType="textMultiLine"
+            android:lineSpacingMultiplier="1.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/edtTitle"
+            app:layout_constraintStart_toStartOf="@+id/edtTitle"
+            app:layout_constraintTop_toBottomOf="@+id/edtTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
