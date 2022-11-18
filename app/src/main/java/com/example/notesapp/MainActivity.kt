@@ -22,6 +22,7 @@ import com.example.notesapp.Models.NotesViewModel
 import com.example.notesapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener,
+
     PopupMenu.OnMenuItemClickListener {
 
     private lateinit var binding: ActivityMainBinding
