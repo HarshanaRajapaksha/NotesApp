@@ -9,8 +9,7 @@
  - Staggered View
  - Shows Date and Time of Note creation
  - Notes are sorted according to date and time
- - Notes can be searched
- - Notes can be create, deleted and updated
+ - Notes can be searched, created, updated and deleted
  
   ## 🛠 Tech Used
 - Kotlin
